@@ -1,0 +1,946 @@
+﻿<div class="col-xs-12 col-md-12 apidoc">
+    
+<div id="sidenav" class="span2">
+<nav id="scrollingNav">
+  <ul class="sidenav nav nav-list">
+          <li class="nav-header active" data-group="Notification"><a href="#api-Notification">Notification</a></li>
+        <li data-group="Notification" data-name="GetAllNotification" data-version="1.0.0" class="">
+          <a href="#api-Notification-GetAllNotification">Get all notifications</a>
+        </li>
+        <li data-group="Notification" data-name="GetNotificationById" data-version="1.0.0" class="">
+          <a href="#api-Notification-GetNotificationById">Get notification by Id</a>
+        </li>
+        <li data-group="Notification" data-name="PostNotification" data-version="1.0.0" class="">
+          <a href="#api-Notification-PostNotification">Create new notification</a>
+        </li>
+        <li data-group="Notification" data-name="UpdateNotification" data-version="1.0.0" class="">
+          <a href="#api-Notification-UpdateNotification">Update notification</a>
+        </li>
+        <li data-group="Notification" data-name="MarkNotificationAsRead" data-version="1.0.0" class="">
+          <a href="#api-Notification-MarkNotificationAsRead">Mark notification as read</a>
+        </li>
+        <li data-group="Notification" data-name="DeleteNotification" data-version="1.0.0" class="">
+          <a href="#api-Notification-DeleteNotification">Delete notification</a>
+        </li>
+  </ul>
+</nav>
+</div>
+    <div id="content">
+      <div id="project">
+  <div class="pull-left">
+    <h1>Notifications API</h1>
+    <h2><a href="/register">Sign up</a> to get <code>your Username</code> and <code>your Secret Key</code></h2>
+  </div>
+  <div class="clearfix"></div>
+</div>
+      <div id="header"></div>
+      <div id="sections">
+  <section id="api-Notification">
+    <h1>Notification</h1>
+      <div id="api-Notification-GetAllNotification">
+        
+  <article id="api-Notification-GetAllNotification-1.0.0" data-group="Notification" data-name="GetAllNotification" data-version="1.0.0">
+    <div class="pull-left">
+      <h1>Notification - Get all notifications</h1>
+    </div>
+    <div class="clearfix"></div>
+
+      <p></p><p>Get all notifications by type or unread</p> <p></p>
+
+    <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">http://notifiermobile.com/api/notifications?username={yourUsername}&amp;secretkey={yourSecretKey}</span></code></pre>
+
+
+
+    
+
+    
+      <h2>Parameter</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 30%">Field</th>
+            <th style="width: 10%">Type</th>
+            <th style="width: 70%">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="code">type <span class="label label-optional">optional</span></td>
+              <td>
+                <p>Number</p> 
+              </td>
+            <td>
+            <p>Optional Type of notification (0 = Info, 1 = Warning, 2 = Error).</p> 
+            
+            
+                        </td>
+          </tr>
+          <tr>
+            <td class="code">unread <span class="label label-optional">optional</span></td>
+              <td>
+                <p>Boolean</p> 
+              </td>
+            <td>
+            <p>Optional Get notifications that were read or not (true = unread, false = read).</p> 
+            
+            
+                        </td>
+          </tr>
+          <tr>
+            <td class="code">fromId <span class="label label-optional">optional</span></td>
+              <td>
+                <p>Number</p> 
+              </td>
+            <td>
+            <p>Optional Get notifications which id is greater than specified id.</p> 
+            
+            
+                        </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <ul class="nav nav-tabs nav-tabs-examples">
+          <li class="active">
+            <a href="#parameter-examples-Notification-GetAllNotification-1_0_0-0">Request-Example:</a>
+          </li>
+      </ul>
+
+      <div class="tab-content">
+        <div class="tab-pane active" id="parameter-examples-Notification-GetAllNotification-1_0_0-0">
+        <pre class="prettyprint language-json prettyprinted" data-type="json"><code><span class="pun">{</span><span class="pln"> 
+    </span><span class="str">"Type"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln">
+    </span><span class="str">"Unread"</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+        </div>
+      </div>
+
+
+    
+      <h2>Success 200</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 30%">Field</th>
+            <th style="width: 10%">Type</th>
+            <th style="width: 70%">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="code">response</td>
+              <td>
+                <p>Notification[]</p> 
+              </td>
+            <td>
+            <p>List of notifications.</p> 
+            
+            
+                        </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <ul class="nav nav-tabs nav-tabs-examples">
+          <li class="active">
+            <a href="#success-examples-Notification-GetAllNotification-1_0_0-0">Success-Response:</a>
+          </li>
+      </ul>
+
+      <div class="tab-content">
+        <div class="tab-pane active" id="success-examples-Notification-GetAllNotification-1_0_0-0">
+        <pre class="prettyprint language-json prettyprinted" data-type="json"><code><span class="pun">[</span><span class="pln">
+     </span><span class="pun">{</span><span class="pln">
+         </span><span class="str">"Id"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">1</span><span class="pun">,</span><span class="pln">
+         </span><span class="str">"Title"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"title 1"</span><span class="pun">,</span><span class="pln">
+         </span><span class="str">"Message"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"message 1"</span><span class="pun">,</span><span class="pln">
+         </span><span class="str">"Type"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln">
+         </span><span class="str">"UnRead"</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">,</span><span class="pln">
+         </span><span class="str">"CreateDate"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"2015-09-24T07:35:23.017"</span><span class="pln">
+     </span><span class="pun">},</span><span class="pln">
+     </span><span class="pun">{</span><span class="pln">
+         </span><span class="str">"Id"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">2</span><span class="pun">,</span><span class="pln">
+         </span><span class="str">"Title"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"title 2"</span><span class="pun">,</span><span class="pln">
+         </span><span class="str">"Message"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"mesage 2"</span><span class="pun">,</span><span class="pln">
+         </span><span class="str">"Type"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">1</span><span class="pun">,</span><span class="pln">
+         </span><span class="str">"UnRead"</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">,</span><span class="pln">
+         </span><span class="str">"CreateDate"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"2015-09-24T07:26:53.5"</span><span class="pln">
+     </span><span class="pun">}</span><span class="pln">
+ </span><span class="pun">]</span></code></pre>
+        </div>
+      </div>
+
+
+    
+      <h2>Error 4xx</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 30%">Field</th>
+            
+            <th style="width: 70%">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="code">401</td>
+            <td>
+            <p>Unauthorized (The <code>username</code> or <code>secretKey</code> is invalid).</p> 
+            
+            
+                        </td>
+          </tr>
+          <tr>
+            <td class="code">400</td>
+            <td>
+            <p>Bad request (The parameter is invalid).</p> 
+            
+            
+                        </td>
+          </tr>
+          <tr>
+            <td class="code">500</td>
+            <td>
+            <p>Internal server error.</p> 
+            
+            
+                        </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+
+    
+
+
+  </article>
+
+      </div>
+      <div id="api-Notification-GetNotificationById">
+        
+  <article id="api-Notification-GetNotificationById-1.0.0" data-group="Notification" data-name="GetNotificationById" data-version="1.0.0">
+    <div class="pull-left">
+      <h1>Notification - Get notification by Id</h1>
+    </div>
+    <div class="clearfix"></div>
+
+      <p></p><p>Get notification by id</p> <p></p>
+
+    <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">http://notifiermobile.com/api/notifications/:id?username={yourUsername}&amp;secretkey={yourSecretKey}</span></code></pre>
+
+
+
+    
+
+    
+      <h2>Parameter</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 30%">Field</th>
+            <th style="width: 10%">Type</th>
+            <th style="width: 70%">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="code">id</td>
+              <td>
+                <p>Number</p> 
+              </td>
+            <td>
+            <p>Id of notification.</p> 
+            
+            
+                        </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+    
+      <h2>Success 200</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 30%">Field</th>
+            <th style="width: 10%">Type</th>
+            <th style="width: 70%">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="code">response</td>
+              <td>
+                <p>Notification</p> 
+              </td>
+            <td>
+            <p>Notification with specified id.</p> 
+            
+            
+                        </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <ul class="nav nav-tabs nav-tabs-examples">
+          <li class="active">
+            <a href="#success-examples-Notification-GetNotificationById-1_0_0-0">Success-Response:</a>
+          </li>
+      </ul>
+
+      <div class="tab-content">
+        <div class="tab-pane active" id="success-examples-Notification-GetNotificationById-1_0_0-0">
+        <pre class="prettyprint language-json prettyprinted" data-type="json"><code><span class="pun">{</span><span class="pln">
+     </span><span class="str">"Id"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">1</span><span class="pun">,</span><span class="pln">
+     </span><span class="str">"Title"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"title 1"</span><span class="pun">,</span><span class="pln">
+     </span><span class="str">"Message"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"message 1"</span><span class="pun">,</span><span class="pln">
+     </span><span class="str">"Type"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln">
+     </span><span class="str">"UnRead"</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">,</span><span class="pln">
+     </span><span class="str">"CreateDate"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"2015-09-24T07:35:23.017"</span><span class="pln">
+ </span><span class="pun">}</span></code></pre>
+        </div>
+      </div>
+
+
+    
+      <h2>Error 4xx</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 30%">Field</th>
+            
+            <th style="width: 70%">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="code">401</td>
+            <td>
+            <p>Unauthorized (The <code>username</code> or <code>secretKey</code> is invalid).</p> 
+            
+            
+                        </td>
+          </tr>
+          <tr>
+            <td class="code">400</td>
+            <td>
+            <p>Bad request (The parameter is invalid).</p> 
+            
+            
+                        </td>
+          </tr>
+          <tr>
+            <td class="code">404</td>
+            <td>
+            <p>Not found (The notification with specified id does not exist).</p> 
+            
+            
+                        </td>
+          </tr>
+          <tr>
+            <td class="code">500</td>
+            <td>
+            <p>Internal server error.</p> 
+            
+            
+                        </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+
+    
+
+
+  </article>
+
+      </div>
+      <div id="api-Notification-PostNotification">
+        
+  <article id="api-Notification-PostNotification-1.0.0" data-group="Notification" data-name="PostNotification" data-version="1.0.0">
+    <div class="pull-left">
+      <h1>Notification - Create new notification</h1>
+    </div>
+    <div class="clearfix"></div>
+
+      <p></p><p>Create new notification</p> <p></p>
+
+    <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">http://notifiermobile.com/api/notifications?username={yourUsername}&amp;secretkey={yourSecretKey}</span></code></pre>
+
+      <h2>Header</h2>
+      <table>
+          <thead>
+              <tr>
+                  <th style="width: 30%">Field</th>
+                  <th style="width: 70%">Description</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td class="code">Content-Type</td>
+                  <td>
+                      <p>application/json</p>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+    
+      <h2>Parameter</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 30%">Field</th>
+            <th style="width: 10%">Type</th>
+            <th style="width: 70%">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="code">title</td>
+              <td>
+                <p>String</p> 
+              </td>
+            <td>
+            <p>Title of notification.</p> 
+            <p class="type-size">Max length: <code>200</code></p>
+            
+                        </td>
+          </tr>
+          <tr>
+            <td class="code">message <span class="label label-optional">optional</span></td>
+              <td>
+                <p>String</p> 
+              </td>
+            <td>
+            <p>Optional Content of notification.</p> 
+            <p class="type-size">Max length: <code>500</code></p>
+            
+                        </td>
+          </tr>
+          <tr>
+            <td class="code">type <span class="label label-optional">optional</span></td>
+              <td>
+                <p>Number</p> 
+              </td>
+            <td>
+            <p>Optional Type of notification (0 = Info, 1 = Warning, 2 = Error).</p> 
+            
+            
+                        </td>
+          </tr>
+          <tr>
+            <td class="code">createDate <span class="label label-optional">optional</span></td>
+              <td>
+                <p>CreateDate</p> 
+              </td>
+            <td>
+            <p>Optional Created Date of notification.</p> 
+            
+            
+                        </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <ul class="nav nav-tabs nav-tabs-examples">
+          <li class="active">
+            <a href="#parameter-examples-Notification-PostNotification-1_0_0-0">Request-Example:</a>
+          </li>
+      </ul>
+
+      <div class="tab-content">
+        <div class="tab-pane active" id="parameter-examples-Notification-PostNotification-1_0_0-0">
+        <pre class="prettyprint language-json prettyprinted" data-type="json"><code><span class="pun">{</span><span class="pln"> 
+    </span><span class="str">"Title"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"title"</span><span class="pun">,</span><span class="pln">
+    </span><span class="str">"Message"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"message"</span><span class="pun">,</span><span class="pln">
+    </span><span class="str">"Type"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+        </div>
+      </div>
+
+
+    
+
+      <ul class="nav nav-tabs nav-tabs-examples">
+          <li class="active">
+            <a href="#success-examples-Notification-PostNotification-1_0_0-0">Success-Response:</a>
+          </li>
+      </ul>
+
+      <div class="tab-content">
+        <div class="tab-pane active" id="success-examples-Notification-PostNotification-1_0_0-0">
+        <pre class="prettyprint language-json prettyprinted" data-type="json"><code><span class="pln">HTTP</span><span class="pun">/</span><span class="lit">1.1</span><span class="pln"> </span><span class="lit">201</span><span class="pln"> </span><span class="typ">Created</span></code></pre>
+        </div>
+      </div>
+
+
+    
+      <h2>Error 4xx</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 30%">Field</th>
+            
+            <th style="width: 70%">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="code">401</td>
+            <td>
+            <p>Unauthorized (The <code>username</code> or <code>secretKey</code> is invalid).</p> 
+            
+            
+                        </td>
+          </tr>
+          <tr>
+            <td class="code">400</td>
+            <td>
+            <p>Bad request (The parameter is invalid).</p> 
+            
+            
+                        </td>
+          </tr>
+          <tr>
+            <td class="code">403</td>
+            <td>
+            <p>Forbidden (You reached to limit of notifications a day).</p> 
+            
+            
+                        </td>
+          </tr>
+          <tr>
+            <td class="code">500</td>
+            <td>
+            <p>Internal server error.</p> 
+            
+            
+                        </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+
+    
+
+
+  </article>
+
+      </div>
+      <div id="api-Notification-UpdateNotification">
+        
+  <article id="api-Notification-UpdateNotification-1.0.0" data-group="Notification" data-name="UpdateNotification" data-version="1.0.0">
+    <div class="pull-left">
+      <h1>Notification - Update notification</h1>
+    </div>
+    <div class="clearfix"></div>
+
+      <p></p><p>Update a notification</p> <p></p>
+
+    <pre class="prettyprint language-html prettyprinted" data-type="put"><code><span class="pln">http://notifiermobile.com/api/notifications/:id?username={yourUsername}&amp;secretkey={yourSecretKey}</span></code></pre>
+
+      <h2>Header</h2>
+      <table>
+          <thead>
+              <tr>
+                  <th style="width: 30%">Field</th>
+                  <th style="width: 70%">Description</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td class="code">Content-Type</td>
+                  <td>
+                      <p>application/json</p>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+    
+      <h2>Parameter</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 30%">Field</th>
+            <th style="width: 10%">Type</th>
+            <th style="width: 70%">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="code">title <span class="label label-optional">optional</span></td>
+              <td>
+                <p>String</p> 
+              </td>
+            <td>
+            <p>Optional Title of notification.</p> 
+            <p class="type-size">Max length: <code>200</code></p>
+            
+                        </td>
+          </tr>
+          <tr>
+            <td class="code">message <span class="label label-optional">optional</span></td>
+              <td>
+                <p>String</p> 
+              </td>
+            <td>
+            <p>Optional Content of notification.</p> 
+            <p class="type-size">Max length: <code>500</code></p>
+            
+                        </td>
+          </tr>
+          <tr>
+            <td class="code">type <span class="label label-optional">optional</span></td>
+              <td>
+                <p>Number</p> 
+              </td>
+            <td>
+            <p>Optional Type of notification (0 = Info, 1 = Warning, 2 = Error).</p> 
+            
+            
+                        </td>
+          </tr>
+          <tr>
+            <td class="code">unread <span class="label label-optional">optional</span></td>
+              <td>
+                <p>Boolean</p> 
+              </td>
+            <td>
+            <p>Optional Notification is unread or read (true = unread, false = read).</p> 
+            
+            
+                        </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <ul class="nav nav-tabs nav-tabs-examples">
+          <li class="active">
+            <a href="#parameter-examples-Notification-UpdateNotification-1_0_0-0">Request-Example:</a>
+          </li>
+      </ul>
+
+      <div class="tab-content">
+        <div class="tab-pane active" id="parameter-examples-Notification-UpdateNotification-1_0_0-0">
+        <pre class="prettyprint language-json prettyprinted" data-type="json"><code><span class="pun">{</span><span class="pln"> 
+    </span><span class="str">"Title"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"title"</span><span class="pun">,</span><span class="pln">
+    </span><span class="str">"Message"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"message"</span><span class="pun">,</span><span class="pln">
+    </span><span class="str">"Type"</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln">
+    </span><span class="str">"UnRead"</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">true</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+        </div>
+      </div>
+
+
+    
+
+      <ul class="nav nav-tabs nav-tabs-examples">
+          <li class="active">
+            <a href="#success-examples-Notification-UpdateNotification-1_0_0-0">Success-Response:</a>
+          </li>
+      </ul>
+
+      <div class="tab-content">
+        <div class="tab-pane active" id="success-examples-Notification-UpdateNotification-1_0_0-0">
+        <pre class="prettyprint language-json prettyprinted" data-type="json"><code><span class="pln">HTTP</span><span class="pun">/</span><span class="lit">1.1</span><span class="pln"> </span><span class="lit">200</span><span class="pln"> OK</span></code></pre>
+        </div>
+      </div>
+
+
+    
+      <h2>Error 4xx</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 30%">Field</th>
+            
+            <th style="width: 70%">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="code">401</td>
+            <td>
+            <p>Unauthorized (The <code>username</code> or <code>secretKey</code> is invalid).</p> 
+            
+            
+                        </td>
+          </tr>
+          <tr>
+            <td class="code">400</td>
+            <td>
+            <p>Bad request (The parameter is invalid).</p> 
+            
+            
+                        </td>
+          </tr>
+          <tr>
+            <td class="code">404</td>
+            <td>
+            <p>Not found (The notification with specified id does not exist).</p> 
+            
+            
+                        </td>
+          </tr>
+          <tr>
+            <td class="code">500</td>
+            <td>
+            <p>Internal server error.</p> 
+            
+            
+                        </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+
+    
+
+
+  </article>
+
+      </div>
+      <div id="api-Notification-MarkNotificationAsRead">
+        
+  <article id="api-Notification-MarkNotificationAsRead-1.0.0" data-group="Notification" data-name="MarkNotificationAsRead" data-version="1.0.0">
+    <div class="pull-left">
+      <h1>Notification - Mark notification as read</h1>
+    </div>
+    <div class="clearfix"></div>
+
+      <p></p><p>Mark a notification as read</p> <p></p>
+
+    <pre class="prettyprint language-html prettyprinted" data-type="put"><code><span class="pln">http://notifiermobile.com/api/notifications/markRead/:id?username={yourUsername}&amp;secretkey={yourSecretKey}</span></code></pre>
+
+
+
+    
+
+    
+      <h2>Parameter</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 30%">Field</th>
+            <th style="width: 10%">Type</th>
+            <th style="width: 70%">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="code">id</td>
+              <td>
+                <p>Number</p> 
+              </td>
+            <td>
+            <p>Id of notification.</p> 
+            
+            
+                        </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+    
+
+      <ul class="nav nav-tabs nav-tabs-examples">
+          <li class="active">
+            <a href="#success-examples-Notification-MarkNotificationAsRead-1_0_0-0">Success-Response:</a>
+          </li>
+      </ul>
+
+      <div class="tab-content">
+        <div class="tab-pane active" id="success-examples-Notification-MarkNotificationAsRead-1_0_0-0">
+        <pre class="prettyprint language-json prettyprinted" data-type="json"><code><span class="pln">HTTP</span><span class="pun">/</span><span class="lit">1.1</span><span class="pln"> </span><span class="lit">200</span><span class="pln"> OK</span></code></pre>
+        </div>
+      </div>
+
+
+    
+      <h2>Error 4xx</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 30%">Field</th>
+            
+            <th style="width: 70%">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="code">401</td>
+            <td>
+            <p>Unauthorized (The <code>username</code> or <code>secretKey</code> is invalid).</p> 
+            
+            
+                        </td>
+          </tr>
+          <tr>
+            <td class="code">400</td>
+            <td>
+            <p>Bad request (The parameter is invalid).</p> 
+            
+            
+                        </td>
+          </tr>
+          <tr>
+            <td class="code">404</td>
+            <td>
+            <p>Not found (The notification with specified id does not exist).</p> 
+            
+            
+                        </td>
+          </tr>
+          <tr>
+            <td class="code">500</td>
+            <td>
+            <p>Internal server error.</p> 
+            
+            
+                        </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+
+    
+
+
+  </article>
+
+      </div>
+      <div id="api-Notification-DeleteNotification">
+        
+  <article id="api-Notification-DeleteNotification-1.0.0" data-group="Notification" data-name="DeleteNotification" data-version="1.0.0">
+    <div class="pull-left">
+      <h1>Notification - Delete notification</h1>
+    </div>
+    <div class="clearfix"></div>
+
+      <p></p><p>Delete a notification</p> <p></p>
+
+    <pre class="prettyprint language-html prettyprinted" data-type="delete"><code><span class="pln">http://notifiermobile.com/api/notifications/:id?username={yourUsername}&amp;secretkey={yourSecretKey}</span></code></pre>
+
+
+
+    
+
+    
+      <h2>Parameter</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 30%">Field</th>
+            <th style="width: 10%">Type</th>
+            <th style="width: 70%">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="code">id</td>
+              <td>
+                <p>Number</p> 
+              </td>
+            <td>
+            <p>Id of notification.</p> 
+            
+            
+                        </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+    
+
+      <ul class="nav nav-tabs nav-tabs-examples">
+          <li class="active">
+            <a href="#success-examples-Notification-DeleteNotification-1_0_0-0">Success-Response:</a>
+          </li>
+      </ul>
+
+      <div class="tab-content">
+        <div class="tab-pane active" id="success-examples-Notification-DeleteNotification-1_0_0-0">
+        <pre class="prettyprint language-json prettyprinted" data-type="json"><code><span class="pln">HTTP</span><span class="pun">/</span><span class="lit">1.1</span><span class="pln"> </span><span class="lit">200</span><span class="pln"> OK</span></code></pre>
+        </div>
+      </div>
+
+
+    
+      <h2>Error 4xx</h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 30%">Field</th>
+            
+            <th style="width: 70%">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="code">401</td>
+            <td>
+            <p>Unauthorized (The <code>username</code> or <code>secretKey</code> is invalid).</p> 
+            
+            
+                        </td>
+          </tr>
+          <tr>
+            <td class="code">400</td>
+            <td>
+            <p>Bad request (The parameter is invalid).</p> 
+            
+            
+                        </td>
+          </tr>
+          <tr>
+            <td class="code">404</td>
+            <td>
+            <p>Not found (The notification with specified id does not exist).</p> 
+            
+            
+                        </td>
+          </tr>
+          <tr>
+            <td class="code">500</td>
+            <td>
+            <p>Internal server error.</p> 
+            
+            
+                        </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+
+    
+
+
+  </article>
+
+      </div>
+  </section>
+</div>
+      <div id="footer"></div>
+      <div id="generator">
+</div>
+    </div>
+</div>

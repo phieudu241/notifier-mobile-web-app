@@ -1,0 +1,24 @@
+﻿<div class="col-xs-12 col-sm-12" ng-cloak>
+    <form class="form-horizontal" name="activeForm">
+        <!-- Header area -->
+        <div class="form-group">
+            <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+                <h3>Notifier Mobile</h3>
+            </div>
+        </div>
+        
+        <!-- Messsages area -->
+        <div class="form-group">
+            <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+                <!-- Active Successfully -->
+                <p class="alert alert-success" ng-show="success">
+                    Your account is active. The <a href="/api">Notification API</a> and <a href="/notifierMobileApp">Notifier Mobile application</a> are available for you to use right now.
+                    <br />
+                    <a href="/login">Login</a> to get your secret key
+                </p>
+                <!-- Active Failed -->
+                <p class="alert alert-danger" ng-show="error" ng-bind="error"></p>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,42 @@
+﻿<div class="col-xs-12 col-sm-12" ng-cloak>
+    <form class="form-horizontal" name="loginForm" noValidate ng-submit="login()">
+        <div class="form-group">
+            <div class="col-xs-12 col-sm-offset-4 col-sm-4">
+                <h3>Notifier Mobile</h3>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="col-xs-12 col-sm-offset-4 col-sm-4">
+                <!-- Login Fail -->
+                <p class="alert alert-danger" ng-show="error" ng-bind="error"></p>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="col-xs-12 col-sm-offset-4 col-sm-4">
+                <input class="form-control" name="username" ng-model="loginModel.username" maxlength=50 placeholder="Username" ng-disabled="posting" required>
+                <div ng-show="loginForm.$submitted || loginForm.username.$touched">
+                    <span class="text-danger" ng-show="loginForm.username.$error.required">Please input this field</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-12 col-sm-offset-4 col-sm-4">
+                <input type="password" class="form-control" name="password" ng-model="loginModel.password" maxlength=200 placeholder="Password" ng-disabled="posting" required>
+                <div ng-show="loginForm.$submitted || loginForm.password.$touched">
+                    <span class="text-danger" ng-show="loginForm.password.$error.required">Please input this field</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-4 col-sm-4">
+                <button type="submit" class="btn btn-primary col-sm-12" ng-disabled="posting">Login</button>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <a ui-sref="forgotPassword" class="col-sm-offset-4 col-sm-4 text-center">Forgot Password</a>
+        </div>
+    </form>
+</div>

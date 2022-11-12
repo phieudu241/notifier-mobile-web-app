@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
+  <url>
+    <loc>http://notifiermobile.com</loc> 
+  </url>
+  <url>
+    <loc>http://notifiermobile.com/api</loc> 
+  </url>
+  <url>
+    <loc>http://notifiermobile.com/notifierMobileApp</loc> 
+  </url>
+  <url>
+    <loc>http://notifiermobile.com/login</loc> 
+  </url>
+  <url>
+    <loc>http://notifiermobile.com/register</loc> 
+  </url>
+  <url>
+    <loc>http://notifiermobile.com/java</loc> 
+  </url>
+  <url>
+    <loc>http://notifiermobile.com/dotnet</loc> 
+  </url>
+  <url>
+    <loc>http://notifiermobile.com/otherLanguages</loc> 
+  </url>
+  <url>
+    <loc>http://notifiermobile.com/donate</loc> 
+  </url>
+  <url>
+    <loc>http://notifiermobile.com/contact</loc> 
+  </url>
+</urlset>

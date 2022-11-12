@@ -1,0 +1,40 @@
+﻿<div class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="NavigationBarController" ng-cloak>
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" ng-click="isCollapsed = !isCollapsed">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand navbar-brand-logo" href="/">
+                <div class="logo">
+                    <img src="Images/icon_mobile_40.png" alt="Notifier Mobile"/>
+                </div>
+                <div class="brand">Notifier Mobile</div>
+            </a>
+        </div>
+        <div class="navbar-collapse collapse" collapse="isCollapsed" id="navbar-main">
+            <ul class="nav navbar-nav">
+                <li ng-class="{active: isActive('/api')}"><a ui-sref="api">API</a></li>
+                <li ng-class="{active: isActive('/java') || isActive('/dotnet') || isActive('/otherLanguages')}" dropdown is-open="false">
+                    <a href="#" type="button" dropdown-toggle ng-disabled="disabled">Libraries <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a ui-sref="java">Java</a></li>
+                        <li><a ui-sref="dotnet">.NET</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a ui-sref="otherLanguages">Other Languages</a></li>
+                    </ul>
+                </li>
+                <li ng-class="{active: isActive('/notifierMobileApp')}"><a ui-sref="notifierMobileApp">Notifier Mobile App</a></li>
+                <li ng-class="{active: isActive('/donate')}"><a ui-sref="donate">Donate</a></li>
+                <li ng-class="{active: isActive('/contact')}"><a ui-sref="contact">Contact Us</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li if-not-user ng-class="{active: isActive('/login')}"><a ui-sref="login">Login</a></li>
+                <li if-not-user ng-class="{active: isActive('/register')}"><a ui-sref="register">Register</a></li>
+                <li if-user ng-class="{active: isActive('/secretKey')}"><a ui-sref="secretKey">Secret Key</a></li>
+                <li if-user ng-class="{active: isActive('/logout')}"><a ui-sref="logout">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,146 @@
+﻿<div class="col-xs-12 col-md-12">
+    <div class="libraries">
+        <h1 class="title">Java - Notifier Mobile Service</h1>
+        <h2>Download</h2>
+        <p>You can download Notifier Mobile Service as a JAR file.</p>
+        <p>
+            <a href="/Download/notifier-mobile-service-1.0.jar" target="_self" class="btn btn-success btn-lg">Download <i class="fa fa-cloud-download"></i></a>
+        </p>
+
+        <p>Or</p>
+            <p>Using Maven to import the library to your project</p>
+            <pre class="prettyprint">
+&ltdependency&gt
+    &ltgroupId&gtcom.notifiermobile&lt/groupId&gt
+    &ltartifactId&gtnotifier-mobile-service&lt/artifactId&gt
+    &ltversion&gt1.0&lt/version&gt
+&lt/dependency&gt
+            </pre>
+            <p class="note bg-danger">Note: For others such as Gradle/Grails, Groovy Grape, Apache Ivy, Scala SBT, Leiningen ... you can get <a href="http://search.maven.org/#artifactdetails%7Ccom.notifiermobile%7Cnotifier-mobile-service%7C1.0%7Cjar">here</a>
+            </p>
+    
+        <p>
+            By Notifier Mobile Service, you can <code>CREATE/GET/UPDATE/DELETE</code> notifications easily just with a few lines of code.
+        </p>
+
+        <!-- Import library -->
+        <div class="code-example">
+            <h2>Import library</h2>
+            <pre class="prettyprint">
+    import com.notifiermobile.NotifierMobileService;
+            </pre>
+        </div>
+
+        <!-- Create Notification -->
+        <div class="code-example">
+            <h2>Create Notification</h2>
+            <pre class="prettyprint">
+    // Create object for authentication
+    Authentication authentication = new Authentication("yourUsername", "yourSecretKey");
+
+    // Create new notification
+    Notification notification = new Notification();
+    notification.setTitle("title");
+    notification.setMessage("message");
+    notification.setType(NotificationType.INFO.ordinal());
+
+    // Add notification by service
+    NotifierMobileService.add(notification, authentication);
+            </pre>
+
+            <p class="note bg-danger">Note: Notification id is generated automatically, you do not need to set id for new notification</p>
+        </div>
+        
+        <!-- Get All Notifications -->
+        <div class="code-example">
+            <h2>Get All Notifications</h2>
+            <pre class="prettyprint">
+    // Create object for authentication
+    Authentication authentication = new Authentication("yourUsername", "yourSecretKey");
+
+    // Get all notifications by service
+    NotifierMobileService.getAll(authentication);
+            </pre>
+
+            <p class="note bg-danger">Note: You can get notifications by type (INFO, WARNING, ERROR) or status of notification (unread or read)</p>
+        </div>
+
+        <!-- Get Notification By Id -->
+        <div class="code-example">
+            <h2>Get Notification By Id</h2>
+            <pre class="prettyprint">
+    // Create object for authentication
+    Authentication authentication = new Authentication("yourUsername", "yourSecretKey");
+
+    // Get notification with id = 1 by service
+    NotifierMobileService.get(1, authentication);
+            </pre>
+        </div>
+
+        <!-- Update Notification -->
+        <div class="code-example">
+            <h2>Update Notification</h2>
+            <pre class="prettyprint">
+    // Create object for authentication
+    Authentication authentication = new Authentication("yourUsername", "yourSecretKey");
+
+    Notification notification = new Notification();
+    // Update message
+    notification.setMessage("message");
+
+    // Update message for notification with id = 1 by service
+    NotifierMobileService.update(1, notification, authentication);
+            </pre>
+
+            <p class="note bg-danger">Note: You can not update id of notification</p>
+        </div>
+
+        <!-- Mark Notification As Read -->
+        <div class="code-example">
+            <h2>Mark Notification As Read</h2>
+            <pre class="prettyprint">
+    // Create object for authentication
+    Authentication authentication = new Authentication("yourUsername", "yourSecretKey");
+
+    // Mark notification with id = 1 as read by service
+    NotifierMobileService.markAsRead(1, authentication);
+            </pre>
+        </div>
+
+        <!-- Delete Notification -->
+        <div class="code-example">
+            <h2>Delete Notification</h2>
+            <pre class="prettyprint">
+    // Create object for authentication
+    Authentication authentication = new Authentication("yourUsername", "yourSecretKey");
+
+    // Delete notification with id = 1 by service
+    NotifierMobileService.delete(1, authentication);
+            </pre>
+        </div>
+
+        <!-- Exception -->
+        <div class="code-example">
+            <h2>Exception</h2>
+            <p>A <code>NotificationException</code> will be throwed when there is an error during connecting to server.</p>
+            <pre class="prettyprint">
+    try {
+        // Create object for authentication
+        Authentication authentication = new Authentication("yourUsername", "yourSecretKey");
+
+        // Create new notification
+        Notification notification = new Notification();
+        notification.setTitle("title");
+        notification.setMessage("message");
+        notification.setType(NotificationType.INFO.ordinal());
+
+        // Add notification by service
+        NotifierMobileService.add(notification, authentication);
+    } catch (NotificationExcception e) {
+        System.out.println(e);
+    }
+            </pre>
+        </div>
+
+    </div>
+</div>

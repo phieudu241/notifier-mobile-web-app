@@ -1,0 +1,105 @@
+﻿<div class="col-xs-12 col-sm-12" ng-cloak>
+    <form class="form-horizontal" name="registerForm" noValidate ng-submit="register()">
+        <!-- Header area -->
+        <div class="form-group">
+            <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+                <h3>Notifier Mobile</h3>
+                <label>Sign up to get into <a href="/api">Notification API</a> and <a href="/notifierMobileApp">Notifier Mobile application</a></label>
+            </div>
+        </div>
+        
+        <!-- Messsages area -->
+        <div class="form-group">
+            <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+                <!-- Register Successfully with verification-->
+                <p class="alert alert-success" ng-show="created && needVerification">
+                    Your account has been created but it's still inactive. <span class="important-content">Please check your email for verification link (include Junk/Spam email)</span>.
+                </p>
+                <!-- Register Successfully without verification-->
+
+                <p class="alert alert-success" ng-show="created && !needVerification">
+                    Your account has been created. The <a href="/api">Notification API</a> and <a href="/notifierMobileApp">Notifier Mobile application</a> are available for you to use right now!
+                    <br />
+                    <a ui-sref="login">Login</a> to get your secret key
+                </p>
+                
+                <!-- Register Fail -->
+                <p class="alert alert-danger" ng-show="error && !created" ng-bind="error"></p>
+            </div>
+        </div>
+
+        <!-- Register form -->
+        <div ng-show="!created">
+
+            <!-- Username -->
+            <div class="form-group">
+                <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+                    <input class="form-control" name="username" ng-model="registerModel.username" maxlength=50 placeholder="Username" ng-disabled="posting" required>
+                    <div ng-show="registerForm.$submitted || registerForm.username.$touched">
+                        <span class="text-danger" ng-show="registerForm.username.$error.required">Please input this field</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+                    <input type="password" class="form-control" name="password" ng-model="registerModel.password" maxlength=200 placeholder="Password" ng-disabled="posting" required>
+                    <div ng-show="registerForm.$submitted || registerForm.password.$touched">
+                        <span class="text-danger" ng-show="registerForm.password.$error.required">Please input this field</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="form-group">
+                <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+                    <input type="password" class="form-control" name="confirmPassword" ng-model="registerModel.confirmPassword" maxlength=200 placeholder="Confirm password" ng-disabled="posting" required>
+                    <div ng-show="registerForm.$submitted || registerForm.confirmPassword.$touched">
+                        <span class="text-danger" ng-show="registerForm.confirmPassword.$error.required">Please input this field</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- First name -->
+            <div class="form-group">
+                <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+                    <input class="form-control" name="firstname" ng-model="registerModel.firstname" maxlength=128 placeholder="First name" ng-disabled="posting" required>
+                    <div ng-show="registerForm.$submitted || registerForm.firstname.$touched">
+                        <span class="text-danger" ng-show="registerForm.firstname.$error.required">Please input this field</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Last name -->
+            <div class="form-group">
+                <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+                    <input class="form-control" name="lastname" ng-model="registerModel.lastname" maxlength=128 placeholder="Last name" ng-disabled="posting" required>
+                    <div ng-show="registerForm.$submitted || registerForm.lastname.$touched">
+                        <span class="text-danger" ng-show="registerForm.lastname.$error.required">Please input this field</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+                    <input type="email" class="form-control" name="email" ng-model="registerModel.email" maxlength=200 placeholder="Email address" ng-disabled="posting" required>
+                    <div ng-show="registerForm.$submitted || registerForm.email.$touched">
+                        <span class="text-danger" ng-show="registerForm.email.$error.required">Please input this field</span>
+                        <span class="text-danger" ng-show="registerForm.email.$error.email">Email is invalid</span>
+                    </div>
+                    <div ng-show="'@ViewBag.EnableEmailVerification' == 'on'">
+                        <span class="text-danger">(*): The email will be used to active your account</span>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-6">
+                    <button type="submit" class="btn btn-success col-sm-12" ng-disabled="posting">Register</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
